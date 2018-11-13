@@ -1,9 +1,9 @@
+#!/bin/sh
+
 #
 # Copyright (C) Philon <hi@philon.cn>
 # 2018-11-11
 #
-
-#!/bin/sh
 
 success_echo() {
   echo "\033[32m$1\033[0m"
