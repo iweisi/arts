@@ -1,0 +1,1 @@
+[JS类的私有变量](./JavaScript/JS类的私有变量.md)
