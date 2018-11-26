@@ -1,8 +1,10 @@
 #include "solution.h"
 #include <assert.h>
-
+#include <stdio.h>
 int main(int argc, char* argv[])
 {
-  // todo: unit test
+  assert(strcmp(longestPalindrome("aaabaaaa"), "aaabaaa") == 0);
+  assert(strcmp(longestPalindrome("abc"), "a") == 0);
+  assert(strcmp(longestPalindrome(""), "") == 0);
   return 0;
 }
