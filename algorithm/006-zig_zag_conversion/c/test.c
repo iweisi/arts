@@ -1,8 +1,9 @@
 #include "solution.h"
 #include <assert.h>
+#include <string.h>
 
 int main(int argc, char* argv[])
 {
-  // todo: unit test
+  assert(strcmp(convert("PAYPALISHIRING", 4), "PINALSIGYAHRPI") == 0);
   return 0;
 }
