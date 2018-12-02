@@ -3,7 +3,8 @@ using Xunit;
 
 public class UnitTest {
   [Theory]
-  public void Test() {
-    // todo: unit test
+  [InlineData("PAYPALISHIRING", 4, "PINALSIGYAHRPI")]
+  public void Test(string s, int numRows, string converted) {
+    Assert.Equal(new Solution().Convert(s, numRows), converted);
   }
 }

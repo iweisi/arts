@@ -3,7 +3,6 @@
 
 int main(int argc, char* argv[])
 {
-  Solution s;
-  assert(s.convert("PAYPALISHIRING", 4) == "PINALSIGYAHRPI");
+  // todo: unit test
   return 0;
 }
