@@ -7,6 +7,8 @@
 
 int main(int argc, char* argv[])
 {
-  assert(isMatch("abc", ".*") == 1);
+  assert(!isMatch("ab", ".*c"));
+  assert(isMatch("aaa", "ab*a*c*a"));
+  assert(isMatch("aabaadddqq", ".*d..q*"));
   return 0;
 }
