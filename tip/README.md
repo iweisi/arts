@@ -1,3 +1,8 @@
+## GO语言学习笔记
+[1 hello GO](./go/01-hello.md)  
+[2 数据类型](./go/02-datatype.md)  
+[3 函数](./go/03-function.md)  
+
 ## Kotlin
 [Kotlin关于Int?与Int类型区别与转换](./Kotlin/kotlin-非空类型转换.md)
 
@@ -12,4 +17,5 @@
 
 ## 其他
 [正则表达式学习总结 更新中...](./common/RegularExpression.md)
+
 
