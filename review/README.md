@@ -1,0 +1,1 @@
+[4 自动化你的代码标准](./97ThingsEveryProgrammerShouldKnow/04-AutomateYourCodeStandard.md)  
