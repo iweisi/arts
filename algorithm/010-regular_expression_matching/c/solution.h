@@ -1,37 +1,25 @@
-#define SINGLE_CHARACTER  1
-#define MUTLI_CHARACTER   2
-#define SIGNEL_ANY        3
-#define MUTLI_ANY         4
+#include <string.h>
+
+#ifndef bool
+#define bool int
+#endif
 
 bool isMatch(char* s, char* p) {
-  while (*p && *s) {
-    if (*p >= 'a' && *p <= 'z') {
-      if (p[1] == '*') {
-        // match 0 or N character
-        while (*s && *s == *p) s++;
-        char tmp = *p;
-        p = p + 2;
-        while (*p && *p == tmp) p++;
+  int slen = strlen(s);
+  int plen = strlen(p);
+  int dp[slen+1][plen+1];
+
+  dp[slen][plen] = 1;
+  for (int i = slen; i >= 0; i--) {
+    for (int j = plen - 1; j >= 0; j--) {
+      int match = i < slen && (s[i] == p[j] || p[j] == '.');
+      if (j + 1 < plen && p[j + 1] == '*') {
+        dp[i][j] = dp[i][j+2] || (match && dp[i+1][j]);
       } else {
-        // match single character
-        if (*s != *p) break;
-        s++;
-        p++;
+        dp[i][j] = match && dp[i+1][j+1];
       }
-    } else if (*p == '.') {
-      if (p[1] == '*') {
-        // match 0 or N any character
-        p = p + 2;
-        while (*s && *s != *p) s++;
-      } else {
-        // match single any character
-        s++;
-        p++;
-      }
-    } else {
-      break;
     }
   }
 
-  return *s == '\0' && *p == '\0';
+  return dp[0][0];
 }
