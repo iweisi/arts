@@ -1,0 +1,1 @@
+[6 在你重构之前](./97ThingsEveryProgrammerShouldKnow/06-BeforeYouRefactor.md)
