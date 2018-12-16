@@ -41,56 +41,67 @@ What's the fuuuuuuu!!!
 |filstruct|结构体成员默认值|https://github.com/davidrjenni/reftools/tree/master/cmd/fillstruct
 
 以上的工具可以有选择地安装，但为了开发过程中不要出什么岔子，我一般选择全部安装，很不幸的是安装过程中80%的工具会出现`timeout`的提示。  
-先来看看每个工具的安装命令：
-```
-go get -u -v github.com/ramya-rao-a/go-outline
-go get -u -v github.com/acroca/go-symbols
-go get -u -v github.com/mdempsky/gocode
-go get -u -v github.com/rogpeppe/godef
-go get -u -v golang.org/x/tools/cmd/godoc
-go get -u -v github.com/zmb3/gogetdoc
-go get -u -v golang.org/x/lint/golint
-go get -u -v github.com/fatih/gomodifytags
-go get -u -v golang.org/x/tools/cmd/gorename
-go get -u -v sourcegraph.com/sqs/goreturns
-go get -u -v golang.org/x/tools/cmd/goimports
-go get -u -v github.com/cweill/gotests/...
-go get -u -v golang.org/x/tools/cmd/guru
-go get -u -v github.com/josharian/impl
-go get -u -v github.com/haya14busa/goplay/cmd/goplay
-go get -u -v github.com/uudashr/gopkgs/cmd/gopkgs
-go get -u -v github.com/davidrjenni/reftools/cmd/fillstruct
-go get -u -v github.com/alecthomas/gometalinter
-gometalinter --install
-```
-
-为了统一每个人的开发环境，下文中`GOPATH`表示自己电脑go的安装路径，例如我的电脑默认安装路径为`~/go`，如果没有的话建议先执行命令`export GOPATH=~/go`，Windows用户...👋
 
 ### 安装步骤
+为了统一每个人的开发环境，下文中`GOPATH`表示自己电脑go的安装路径，例如我的电脑默认安装路径为`~/go`，如果没有的话建议先执行命令`export GOPATH=~/go`，Windows用户...👋
+
 1. 创建目录`$GOPATH/src/golang.org/x`，并切换到该目录
 ```bash
-$ mkdir -p $GOPATH/src/golang.org/x/
-$ cd $GOPATH/src/golang.org/x/
+mkdir -p $GOPATH/src/golang.org/x/
+cd $GOPATH/src/golang.org/x/
 ```
-2. 克隆工具源码
+2. 克隆golang.org工具源码  
+如果不克隆的话，`go get -u -v golang.org/xxx`肯定是timeout的，所以只能先把它们下载到本地`src/golang.org/x/tools`
 ```bash
 git clone https://github.com/golang/tools.git
+git clone https://github.com/golang/lint.git
 ```
-3. 安装gometalinter
+3. 下载github源码  
+按照`go get -u -v`命令，从GitHub上下载代码后还会`fetch`，我们很可能会在`fetch https://golang.org/xxx`的时候挂掉，原因你懂的。所以去掉`-u`选项，禁止从网络更新现有代码。
 ```bash
-go get -u -v github.com/alecthomas/gometalinter
+# 先从github下载依赖工具的源码，fetch提示timeout不要管
+go get -v github.com/ramya-rao-a/go-outline
+go get -v github.com/acroca/go-symbols
+go get -v github.com/mdempsky/gocode
+go get -v github.com/rogpeppe/godef
+go get -v github.com/zmb3/gogetdoc
+go get -v github.com/fatih/gomodifytags
+go get -v sourcegraph.com/sqs/goreturns
+go get -v github.com/cweill/gotests/...
+go get -v github.com/josharian/impl
+go get -v github.com/haya14busa/goplay/cmd/goplay
+go get -v github.com/uudashr/gopkgs/cmd/gopkgs
+go get -v github.com/davidrjenni/reftools/cmd/fillstruct
+go get -v github.com/alecthomas/gometalinter
 ```
-4. 安装全部工具
-```bash
-$GOPATH/bin/gometalinter --install
-```
-5. 继承到系统环境中
 
+4. 安装工具
+```bash
+go install github.com/ramya-rao-a/go-outline
+go install github.com/acroca/go-symbols
+go install github.com/mdempsky/gocode
+go install github.com/rogpeppe/godef
+go install github.com/zmb3/gogetdoc
+go install github.com/fatih/gomodifytags
+go install sourcegraph.com/sqs/goreturns
+go install github.com/cweill/gotests/...
+go install github.com/josharian/impl
+go install github.com/haya14busa/goplay/cmd/goplay
+go install github.com/uudashr/gopkgs/cmd/gopkgs
+go install github.com/davidrjenni/reftools/cmd/fillstruct
+go install github.com/alecthomas/gometalinter
+$GOPATH/bin/gometalinter --install
+go install golang.org/x/tools/cmd/godoc
+go install golang.org/x/lint/golint
+go install golang.org/x/tools/cmd/gorename
+go install golang.org/x/tools/cmd/goimports
+go install golang.org/x/tools/cmd/guru
+```
+
+5. 集成到系统环境中  
 由于我是在用户目录下临时安装的，真正的GO环境是`/usr/local/go`，所以最后一步无比注意，把`~/go/bin`下面生成的所有执行文件拷贝到系统环境中
 ```bash
-sudo cp -af go/bin/* /usr/local/go/bin/
+sudo cp -af $GOPATH/bin/* /usr/local/go/bin/
 ```
-
-解释一下，按照官方的套路，我们很可能会在访问golang.org的时候挂掉，原因你懂的，所以只能曲线救国，先从github上把tools全套的下载到本地，在通过gometalinter一键安装。
 
 打完收工！
