@@ -3,6 +3,8 @@
 [2 数据类型](./go/02-datatype.md)  
 [3 函数](./go/03-function.md)  
 
+[VSCode安装GO语言依赖工具](./go/x1-InstallGoToolsForVScode.md)  
+
 ## Kotlin
 [Kotlin关于Int?与Int类型区别与转换](./Kotlin/kotlin-非空类型转换.md)
 
@@ -17,5 +19,3 @@
 
 ## 其他
 [正则表达式学习总结 更新中...](./common/RegularExpression.md)
-
-
