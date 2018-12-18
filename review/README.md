@@ -10,6 +10,7 @@
 [009 回文数字](../algorithm/009-palindrome_number/readme.md)  
 [010 正则表达式匹配](../algorithm/010-regular_expression_matching/readme.md)  
 [011 装最多的水](../algorithm/011-container_with_most_water/readme.md)  
+[012 整型转罗马数字](../algorithm/012-integer_to_roman/readme.md)  
 
 ## 【译】每个程序员都应该知道的97件事
 [1 谨慎行动](./97ThingsEveryProgrammerShouldKnow/01-ActWithPrudence.md)  
