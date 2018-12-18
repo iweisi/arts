@@ -1,1 +1,1 @@
-[VSCode安装GO语言依赖工具](./go/x1-InstallGoToolsForVScode.md)
+[VSCode安装GO语言依赖工具](./go/x1-InstallGoToolsForVSCode.md)
