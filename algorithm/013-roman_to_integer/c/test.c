@@ -3,6 +3,6 @@
 
 int main(int argc, char* argv[])
 {
-  // todo: unit test
+  assert(romanToInt("MCMXCIV") == 1994);
   return 0;
 }
