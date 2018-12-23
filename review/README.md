@@ -11,6 +11,9 @@
 [010 正则表达式匹配](../algorithm/010-regular_expression_matching/readme.md)  
 [011 装最多的水](../algorithm/011-container_with_most_water/readme.md)  
 [012 整型转罗马数字](../algorithm/012-integer_to_roman/readme.md)  
+[013 罗马数字转整型](../algorithm/013-roman_to_integer/readme.md)  
+[014 最长公共前缀](../algorithm/014-longest_common_prefix/readme.md)  
+[015 3数之和](../algorithm/015-3sum/readme.md)  
 
 ## 【译】每个程序员都应该知道的97件事
 [1 谨慎行动](./97ThingsEveryProgrammerShouldKnow/01-ActWithPrudence.md)  
@@ -18,3 +21,6 @@
 [3 问"用户想做什么"(你又不是用户)](./97ThingsEveryProgrammerShouldKnow/03-Ask_WhatWouldTheUserDo.md)  
 [4 自动化你的代码标准](./97ThingsEveryProgrammerShouldKnow/04-AutomateYourCodeStandard.md)  
 [5 美源自简约](./97ThingsEveryProgrammerShouldKnow/05-BeautyIsInSimplicity.md)  
+[6 在你重构之前](./97ThingsEveryProgrammerShouldKnow/06-BeforeYouRefactor.md)  
+[7 小心分享](./97ThingsEveryProgrammerShouldKnow/07-BewareTheShare.md)
+
