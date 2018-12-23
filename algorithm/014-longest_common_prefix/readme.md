@@ -70,3 +70,5 @@ char* longestCommonPrefix(char** strs, int strsSize) {
 ```
 - 时间复杂度：O(S)，S表示所有字符串的长度总和
 - 空间复杂度：O(1)
+
+官方还有4、5种解体方案，我觉得过于啰嗦，这道题没有太大难度，就不往下再研究了。

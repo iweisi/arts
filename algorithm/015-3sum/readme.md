@@ -1,4 +1,4 @@
-# [Two Num](https://leetcode.com/problems/two-sum)
+# [3数之和](https://leetcode.com/problems/two-sum)
 给一个整数构成的数组，其中有三个元素`a,b,c`的总和为0，即`a+b+c=0`？找出数组中唯一的和为零的三个数。
 
 **注意**：答案中是一套集合且其中不能有重复。
