@@ -5,46 +5,45 @@
  * Note: The returned array must be malloced, assume caller calls free().
  */
 int** threeSum(int* nums, int numsSize, int* returnSize) {
-  int** results = calloc(numsSize * 3, sizeof(int*));
-  int len = 0;
-
-  for (int i = 0; i < numsSize; i++) {
-    for (int j = i + 1; j < numsSize; j++) {
-      int a = nums[i] + nums[j];
-      for (int k = j + 1; k < numsSize; k++) {
-        if (a + nums[k]) {
-          continue;
-        }
-
-        int min = nums[i] < nums[j] ? nums[i] : nums[j];
-        min = min < nums[k] ? min : nums[k];
-        int max = nums[i] > nums[j] ? nums[i] : nums[j];
-        max = max > nums[k] ? max : nums[k];
-        int mid = nums[i];
-        if (min < nums[j] && nums[j] < max) mid = nums[j];
-        if (min < nums[k] && nums[k] < max) mid = nums[k];
-        if (nums[j] == nums[k]) mid = nums[j];
-
-        int equal = 0;
-        for (int l = 0; l < len; l++) {
-          if (min == results[l][0] && max == results[l][2]) {
-            equal = 1;
-          }
-        }
-
-        if (equal) {
-          continue;
-        }
-
-        results[len] = calloc(3, sizeof(int));
-        results[len][0] = min;
-        results[len][1] = mid;
-        results[len][2] = max;
-        len++;
+  for (int i = 0; i < numsSize - 1; i++) {
+    for (int j = 0; j < numsSize - i -1; j++) {
+      if (nums[j] > nums[j + 1]) {
+        int tmp = nums[j];
+        nums[j] = nums[j + 1];
+        nums[j + 1] = tmp;
       }
     }
   }
 
-  *returnSize = len;
+  int** results = (int**)calloc(numsSize * 10, sizeof(int*));
+  int n = 0;
+  for (int i = 0; i < numsSize; i++) {
+    int left = i + 1;
+    int right = numsSize - 1;
+    while (left < right) {
+      int sum = nums[i] + nums[left] + nums[right];
+      if (sum < 0) {
+        left++;
+      } else if (sum > 0) {
+        right--;
+      } else {
+        results[n] = (int*)calloc(3, sizeof(int));
+        results[n][0] = nums[i];
+        results[n][1] = nums[left];
+        results[n][2] = nums[right];
+        fprintf(stderr, "results[%d] = [%d, %d, %d]\n", n, results[n][0], results[n][1], results[n][2]);
+        n++;
+        while (nums[left] == nums[left + 1]) left++;
+        while (nums[right] == nums[right - 1]) right--;
+        left++, right--;
+      }
+    }
+
+    while (i + 1 < numsSize && nums[i + 1] == nums[i]) {
+      i++;
+    }
+  }
+
+  *returnSize = n;
   return results;
 }
