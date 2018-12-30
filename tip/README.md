@@ -3,6 +3,7 @@
 [2 数据类型](./go/02-datatype.md)  
 [3 函数](./go/03-function.md)  
 [4 结构体](./go/04-struct.md)  
+[5 JSON的序列化和反序列化](./go/05-json.md)  
 
 [VSCode安装GO语言依赖工具](./go/x1-InstallGoToolsForVSCode.md)  
 

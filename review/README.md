@@ -14,6 +14,8 @@
 [013 罗马数字转整型](../algorithm/013-roman_to_integer/readme.md)  
 [014 最长公共前缀](../algorithm/014-longest_common_prefix/readme.md)  
 [015 3数之和](../algorithm/015-3sum/readme.md)  
+[016 最接近的3个数](../algorithm/016-3sum_closest/readme.md)  
+[017 电话数组键盘的字母组合](../algorithm/017-letter_combinations_of_a_phone_number/readme.md)  
 
 ## 【译】每个程序员都应该知道的97件事
 [1 谨慎行动](./97ThingsEveryProgrammerShouldKnow/01-ActWithPrudence.md)  
@@ -22,5 +24,8 @@
 [4 自动化你的代码标准](./97ThingsEveryProgrammerShouldKnow/04-AutomateYourCodeStandard.md)  
 [5 美源自简约](./97ThingsEveryProgrammerShouldKnow/05-BeautyIsInSimplicity.md)  
 [6 在你重构之前](./97ThingsEveryProgrammerShouldKnow/06-BeforeYouRefactor.md)  
-[7 小心分享](./97ThingsEveryProgrammerShouldKnow/07-BewareTheShare.md)
-
+[7 小心分享](./97ThingsEveryProgrammerShouldKnow/07-BewareTheShare.md)  
+[8 童子军法则](./97ThingsEveryProgrammerShouldKnow/08-TheBoyScoutRule.md)  
+[9 责怪他人前，先检查自己的代码](./97ThingsEveryProgrammerShouldKnow/09-CheckYourCodeFirstBeforeLookingToBlameOther.md)  
+[10 谨慎选择你的工具](./97ThingsEveryProgrammerShouldKnow/10-ChooseYourToolsWithCare.md)  
+[11 编写领域语言](./97ThingsEveryProgrammerShouldKnow/11-CodeInTheLanguageOfDomain.md)  
